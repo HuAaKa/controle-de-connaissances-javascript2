@@ -11,7 +11,16 @@ Rappel :
 */
 
 function findMedianSortedArrays(nums1, nums2) {
-  // TODO : écrire ton code ici
+  let mixedArray = nums1.concat(nums2);
+  mixedArray.sort();
+  let half = Math.floor(mixedArray.length / 2);
+  if (mixedArray.length == 1) {
+    return mixedArray[0];
+  } else if (half % 2 != 0) {
+    return mixedArray[half];
+  } else {
+    return (mixedArray[half - 1] + mixedArray[half]) / 2;
+  }
 }
 
 // --------------------
