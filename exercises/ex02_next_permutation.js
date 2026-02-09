@@ -8,7 +8,14 @@ dans l'ordre lexicographique. Si nums est la dernière permutation, la transform
 */
 
 function nextPermutation(nums) {
-  // TODO : écrire ton code ici
+  let max = Math.max(...nums);
+  if (nums.indexOf(max) == 0) {
+    nums.sort();
+  } else {
+    let tempIndex = nums.indexOf(max) - 1;
+    nums[nums.indexOf(max)] = nums[tempIndex];
+    nums[tempIndex] = max;
+  }
 }
 
 // --------------------
